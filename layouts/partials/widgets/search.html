@@ -10,7 +10,7 @@
     </h4>
   </header>
 
-  <form action='{{ "search" | relLangURL }}' id='search-form' class='search-form'>
+  <form action='{{ "search" | relLangURL }}' id='search-form' class='search-form' autocomplete="off">
     <label>
       <span class='screen-reader-text'>{{ i18n "search" }}</span>
       <input id='search-term' class='search-term' type='search' name='q' placeholder='{{ i18n "search" }}&hellip;'>
@@ -24,4 +24,12 @@
     {{- end -}}
   </form>
 
+  <ul id='search-results' class='list search-results' data-results-empty='{{ i18n "searchResultEmpty" }}' data-searching='{{ i18n "..." }}'>
+  </ul>
+
+  {{- with .Site.Params.search.client -}}
+  {{- $scriptKey := ( print . "_search" ) -}}
+  {{- $scriptName := ( index $.Site.Data.assets $scriptKey ).js -}}
+  <script src='{{ print "assets/js/" $scriptName | relURL }}'></script>
+  {{- end -}}
 </section>

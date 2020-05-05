@@ -38,7 +38,7 @@ searchInputBox.focus()
 
 setSearchingIndicator(resultsBlock)
 
-getJSON(`${window.location.pathname}index.json`, (err, list) => {
+getJSON(`/search/index.json`, (err, list) => {
   if (err) {
     console.error(err)
     return
