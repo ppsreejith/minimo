@@ -1,6 +1,7 @@
 {
   "library": {
-    "path": "//unpkg.com/mathjax@2.7.5/MathJax.js",
+    "path_old": "//unpkg.com/mathjax@2.7.5/MathJax.js",
+    "path": "//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js",
     "config": "TeX-MML-AM_CHTML"
   },
   "config": {}
